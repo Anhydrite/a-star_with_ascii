@@ -5,7 +5,7 @@ map_str: list[str] = [
     "??????????????????????????????",
     "#...............??????????????",
     "#.#############.??????????????",
-    "#.#.#.T#........??????????????",
+    "#.#.#..#........??????????????",
     "#.#......#..............#.#..#",
     "#.##########.############.#..#",
     "#.....##......##......#....###",
@@ -73,7 +73,7 @@ class Mapper:
         printable = f"{printable}"
         from time import sleep
 
-        sleep(0.5)
+        sleep(0.1)
         print(printable)
 
     def get_point(self, x: int, y: int) -> Optional[Point]:
@@ -88,9 +88,7 @@ class Mapper:
     def euclidian_distance(self, point_a: Point, point_b: Point):
         import math
 
-        return math.sqrt(
-            math.pow((point_a.x - point_b.x), 2) + math.pow((point_a.y - point_b.y), 2)
-        )
+        return math.sqrt(math.pow((point_a.x - point_b.x), 2) + math.pow((point_a.y - point_b.y), 2))
 
     def get_neighbors(self, point: Point):
         base_x = point.x
@@ -166,7 +164,9 @@ def main():
     start = mapper.get_point(1, 1)
     end = mapper.get_point(10, 3)
     end.char = "E"
+    start.char = "S"
     a = mapper.compute_path(start, end)
+    start.char = "S"
     print(mapper.retrieve_path(start, end))
     mapper.check_print()
 
