@@ -7,5 +7,5 @@ The initial is in map_str which can be edited freely.
 Meanings of the signs:
 * ? means undiscovered field
 * \# is a direct wall which the player can't go through
-* - is a step (all cases that the player went on)
-* + is the final shortest path when it has been found
+* \- is a step (all cases that the player went on)
+* \+ is the final shortest path when it has been found
